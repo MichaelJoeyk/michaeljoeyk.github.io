@@ -1,0 +1,255 @@
+/* Optik wie kennzeichenschilder-app, acriss-check und fuehrerschein-check */
+
+/* ── CSS-Variablen ── */
+:root {
+  --accent: #ff3800;
+  --bg-page: #f4f4f4;
+  --card-bg: #ffffff;
+  --text-color: #222;
+  --label-color: #666;
+  --border-color: #e0e0e0;
+  --footer-color: #888;
+}
+
+[data-theme="dark"] {
+  --bg-page: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text-color: #e8e8e8;
+  --label-color: #999;
+  --border-color: #3a3a3a;
+  --footer-color: #666;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-page);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ── Theme-Wechsel ── */
+@property --vt-r {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+  /* weiche Kante: Maske mit 160px Verlauf statt hartem clip-path */
+  mask-image: radial-gradient(circle at var(--vt-x, 50%) var(--vt-y, 50%), #000 calc(var(--vt-r) - 160px), transparent var(--vt-r));
+}
+
+/* Fallback ohne View Transitions */
+.theme-fade,
+.theme-fade *,
+.theme-fade *::before,
+.theme-fade *::after {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, fill 0.2s ease !important;
+}
+
+/* ── Layout ── */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px 24px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 580px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.logo {
+  width: 56px;
+  height: auto;
+  aspect-ratio: 64 / 44;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--label-color);
+  margin: 0;
+}
+
+/* ── Karte ── */
+.form-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px 24px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+}
+
+.form-instruction {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0 0 10px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 0 0 20px 0;
+}
+
+/* ── Kacheln wie ArtAuswahl im Führerschein-Check ── */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.tile:hover,
+.tile:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.tile-logo {
+  width: 56px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tile-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.tile-hint {
+  font-size: 0.7rem;
+  color: var(--label-color);
+  text-align: center;
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.65rem;
+  color: var(--footer-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--footer-color);
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+.theme-icon {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.theme-icon svg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.3s ease-out, opacity 0.2s ease;
+}
+
+.icon-sun {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.7);
+}
+
+.icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+[data-theme="dark"] .icon-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+[data-theme="dark"] .icon-moon {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-icon svg {
+    transition: none;
+  }
+}
