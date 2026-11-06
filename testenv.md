@@ -11,7 +11,7 @@
 
 ## Anlegen/Aktualisieren
 ```bash
-./testenv.sh        # baut die drei Apps (vite build), setzt die Seite zusammen, startet den Server
+just test      # = ./testenv.sh, baut die drei Apps (vite build), setzt die Seite zusammen, startet den Server
 ```
 Erneut ausführen übernimmt Änderungen (Apps werden neu gebaut, der Server läuft weiter).
 
@@ -20,8 +20,8 @@ Erneut ausführen übernimmt Änderungen (Apps werden neu gebaut, der Server lä
 
 ## Status / Abbauen
 ```bash
-./testenv.sh status
-./testenv.sh down
+just test-status
+just test-stop
 ```
 
 ## Reset
