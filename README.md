@@ -18,7 +18,6 @@ Die Apps laufen als eigene GitHub-Projektseiten (Repo-Name = Pfad) und werden do
 | `style.css` | Farben und Bausteine aus den Apps |
 | `theme.js` | Theme-Toggle mit Kreis-Reveal |
 | `assets/` | Logos der Apps (aus den jeweiligen Repos kopiert) |
-| `claude/design/` | Varianten-Testseite (gewählt: Variante A) |
 
 ## Lokal ansehen
 
