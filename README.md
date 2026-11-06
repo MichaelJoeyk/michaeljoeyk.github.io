@@ -1,4 +1,4 @@
-# Sixt Tools – Startseite
+# Tools – Startseite
 
 Statische Einstiegsseite für die drei Web-Apps, gehostet als GitHub-Pages-User-Site unter `https://michaeljoeyk.github.io/`. Optik wie die Apps selbst.
 

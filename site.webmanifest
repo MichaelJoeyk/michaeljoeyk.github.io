@@ -1,6 +1,6 @@
 {
-  "name": "Sixt Tools",
-  "short_name": "Sixt Tools",
+  "name": "Tools",
+  "short_name": "Tools",
   "icons": [{ "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
   "theme_color": "#f4f4f4",
   "background_color": "#f4f4f4",
