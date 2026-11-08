@@ -5,7 +5,7 @@
 | Pfad | Quelle |
 |---|---|
 | `/` | dieses Repo (`index.html`, `style.css`, …) |
-| `/schluesselanhaenger/` | `~/dev/schluesselanhaenger-app` (wird bei Bedarf geklont) |
+| `/schluesselanhaenger/` | `~/dev/schluesselanhaenger` (wird bei Bedarf geklont) |
 | `/kennzeichenschilder/` | Weiterleitung aus diesem Repo (`kennzeichenschilder/index.html`) |
 | `/acriss-check/` | `~/dev/acriss-check` |
 | `/acriss-liste/` | `~/dev/acriss-liste` |

@@ -11,7 +11,7 @@ PIDFILE="$SITE.pid"
 export PATH="$HOME/.local/opt/node/bin:$HOME/.local/opt/node-v26.13.0-linux-x64/bin:$PATH"
 
 # Ordner im Repo-Verzeichnis -> Pfad auf der Testseite
-APPS=("schluesselanhaenger-app:schluesselanhaenger" "acriss-check:acriss-check" "acriss-liste:acriss-liste" "fuehrerschein-check:fuehrerschein-check")
+APPS=("schluesselanhaenger:schluesselanhaenger" "acriss-check:acriss-check" "acriss-liste:acriss-liste" "fuehrerschein-check:fuehrerschein-check")
 
 running() { [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; }
 

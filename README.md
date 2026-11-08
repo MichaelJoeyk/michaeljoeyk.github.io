@@ -4,7 +4,7 @@ Statische Einstiegsseite für die vier Web-Apps, gehostet als GitHub-Pages-User-
 
 | App | Pfad | Repo |
 |---|---|---|
-| Schlüsselanhänger | `/schluesselanhaenger/` | `ba/schluesselanhaenger-app` |
+| Schlüsselanhänger | `/schluesselanhaenger/` | `ba/schluesselanhaenger` |
 | ACRISS-Check | `/acriss-check/` | `ba/acriss-check` |
 | ACRISS-Liste | `/acriss-liste/` | `ba/acriss-liste` (noch nicht auf Forgejo) |
 | Führerschein-Check | `/fuehrerschein-check/` | `ba/fuehrerschein-check` |
