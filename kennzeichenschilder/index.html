@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kennzeichenschilder heißt jetzt Schlüsselanhänger. Weiterleitung auf die neue Adresse.">
   <meta name="robots" content="noindex">
-  <meta http-equiv="refresh" content="3; url=../schluesselanhaenger/">
+  <meta http-equiv="refresh" content="15; url=../schluesselanhaenger/">
   <link rel="canonical" href="../schluesselanhaenger/">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <meta name="theme-color" content="#f4f4f4">
@@ -35,7 +35,7 @@
           <a class="tile" id="ziel" href="../schluesselanhaenger/">
             <img class="tile-logo" src="../assets/schluesselanhaenger.webp" alt="">
             <span class="tile-title">Zur neuen App</span>
-            <span class="tile-hint">Weiterleitung in <span id="sekunden">3</span> Sekunden. Bitte Lesezeichen bzw. Homescreen-Verknüpfung neu anlegen.</span>
+            <span class="tile-hint">Weiterleitung in <span id="sekunden">15</span> Sekunden. Bitte Lesezeichen bzw. Homescreen-Verknüpfung neu anlegen.</span>
           </a>
         </div>
       </div>
@@ -49,7 +49,7 @@
     ziel.hash = location.hash;
     document.getElementById('ziel').href = ziel.href;
 
-    let rest = 3;
+    let rest = 15;
     const anzeige = document.getElementById('sekunden');
     const timer = setInterval(() => {
       rest -= 1;

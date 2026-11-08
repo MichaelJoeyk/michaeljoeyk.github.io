@@ -52,4 +52,4 @@ Kachel in `index.html` kopieren, Logo nach `assets/` legen, Pfad = Name des GitH
 
 ## Weiterleitungen
 
-`kennzeichenschilder/index.html`: Die App „Kennzeichenschilder“ heißt seit v2.0.0 „Schlüsselanhänger“ (Repo `schluesselanhaenger`). Weil es kein Projekt-Repo `kennzeichenschilder` mehr gibt, liefert diese User-Site den Pfad `/kennzeichenschilder/` selbst aus: Hinweis und Weiterleitung nach 3 Sekunden auf `/schluesselanhaenger/`. Backup der alten App (v1.3.2) unter `/kennzeichen-old/`.
+`kennzeichenschilder/index.html`: Die App „Kennzeichenschilder“ heißt seit v2.0.0 „Schlüsselanhänger“ (Repo `schluesselanhaenger`). Weil es kein Projekt-Repo `kennzeichenschilder` mehr gibt, liefert diese User-Site den Pfad `/kennzeichenschilder/` selbst aus: Hinweis und Weiterleitung nach 15 Sekunden auf `/schluesselanhaenger/`. Backup der alten App (v1.3.2) unter `/kennzeichen-old/`.
