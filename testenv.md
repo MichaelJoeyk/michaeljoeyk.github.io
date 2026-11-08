@@ -18,7 +18,7 @@ just test      # = ./testenv.sh, baut die vier Apps (vite build), setzt die Seit
 Erneut ausführen übernimmt Änderungen (Apps werden neu gebaut, der Server läuft weiter).
 
 ## Zugriff
-`http://claude.lan:8090/` (Port per `PORT=… ./testenv.sh` änderbar). Gebaut wird nach `~/.local/state/sixt-testenv/`.
+`http://<IP des Rechners>:8090/` (die IP gibt das Skript aus; Port per `PORT=…`, Adresse per `TESTENV_HOST=…` änderbar). Gebaut wird nach `~/.local/state/sixt-testenv/`.
 
 ## Status / Abbauen
 ```bash

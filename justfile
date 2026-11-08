@@ -1,4 +1,4 @@
-# Testumgebung: Startseite + vier Apps auf http://claude.lan:8090/
+# Testumgebung: Startseite + vier Apps auf http://<IP>:8090/
 test:
     ./testenv.sh
 

@@ -4,6 +4,9 @@
 set -euo pipefail
 
 PORT="${PORT:-8090}"
+# Adresse für die Ausgabe: IP der Standardroute (überschreibbar per TESTENV_HOST=…)
+ADDR="${TESTENV_HOST:-$(ip -4 route get 1.1.1.1 2>/dev/null | awk '{for (i = 1; i < NF; i++) if ($i == "src") print $(i + 1)}')}"
+ADDR="${ADDR:-localhost}"
 DEV="$(cd "$(dirname "$0")/.." && pwd)"
 START="$DEV/startseite"
 SITE="${XDG_STATE_HOME:-$HOME/.local/state}/sixt-testenv"
@@ -36,8 +39,8 @@ case "${1:-up}" in
       (cd "$SITE" && setsid nohup python3 -m http.server "$PORT" --bind 0.0.0.0 >/dev/null 2>&1 </dev/null & echo $! > "$PIDFILE") >/dev/null 2>&1
       sleep 1
     fi
-    echo "Startseite:  http://claude.lan:$PORT/"
-    for entry in "${APPS[@]}"; do echo "             http://claude.lan:$PORT/${entry##*:}/"; done
+    echo "Startseite:  http://$ADDR:$PORT/"
+    for entry in "${APPS[@]}"; do echo "             http://$ADDR:$PORT/${entry##*:}/"; done
     ;;
   *) echo "Aufruf: $0 [up|down|status]" >&2; exit 1 ;;
 esac
