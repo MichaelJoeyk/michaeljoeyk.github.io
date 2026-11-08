@@ -4,7 +4,7 @@ Statische Einstiegsseite für die vier Web-Apps, gehostet als GitHub-Pages-User-
 
 | App | Pfad | Repo |
 |---|---|---|
-| Kennzeichenschilder | `/kennzeichenschilder/` | `ba/kennzeichenschilder-app` |
+| Schlüsselanhänger | `/schluesselanhaenger/` | `ba/schluesselanhaenger-app` |
 | ACRISS-Check | `/acriss-check/` | `ba/acriss-check` |
 | ACRISS-Liste | `/acriss-liste/` | `ba/acriss-liste` (noch nicht auf Forgejo) |
 | Führerschein-Check | `/fuehrerschein-check/` | `ba/fuehrerschein-check` |
@@ -40,3 +40,7 @@ Pages-Quelle im GitHub-Repo: Branch `main`, Ordner `/`.
 ## Neue App ergänzen
 
 Kachel in `index.html` kopieren, Logo nach `assets/` legen, Pfad = Name des GitHub-Repos der App.
+
+## Weiterleitungen
+
+`kennzeichenschilder/index.html`: Die App „Kennzeichenschilder“ heißt seit v2.0.0 „Schlüsselanhänger“ (Repo `schluesselanhaenger`). Weil es kein Projekt-Repo `kennzeichenschilder` mehr gibt, liefert diese User-Site den Pfad `/kennzeichenschilder/` selbst aus: Hinweis und Weiterleitung nach 3 Sekunden auf `/schluesselanhaenger/`. Backup der alten App (v1.3.2) unter `/kennzeichen-old/`.

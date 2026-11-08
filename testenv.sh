@@ -11,7 +11,7 @@ PIDFILE="$SITE.pid"
 export PATH="$HOME/.local/opt/node/bin:$HOME/.local/opt/node-v26.13.0-linux-x64/bin:$PATH"
 
 # Ordner im Repo-Verzeichnis -> Pfad auf der Testseite
-APPS=("kennzeichenschilder-app:kennzeichenschilder" "acriss-check:acriss-check" "acriss-liste:acriss-liste" "fuehrerschein-check:fuehrerschein-check")
+APPS=("schluesselanhaenger-app:schluesselanhaenger" "acriss-check:acriss-check" "acriss-liste:acriss-liste" "fuehrerschein-check:fuehrerschein-check")
 
 running() { [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; }
 
@@ -24,7 +24,7 @@ case "${1:-up}" in
     ;;
   up)
     rm -rf "$SITE.new"; mkdir -p "$SITE.new"
-    cp -r "$START"/{index.html,style.css,theme.js,favicon.svg,site.webmanifest,assets} "$SITE.new/"
+    cp -r "$START"/{index.html,style.css,theme.js,favicon.svg,site.webmanifest,assets,kennzeichenschilder} "$SITE.new/"
     for entry in "${APPS[@]}"; do
       dir="${entry%%:*}"; path="${entry##*:}"
       [ -d "$DEV/$dir" ] || git clone -q "git@git.lan:ba/$dir.git" "$DEV/$dir"

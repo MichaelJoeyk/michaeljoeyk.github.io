@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kennzeichenschilder heißt jetzt Schlüsselanhänger. Weiterleitung auf die neue Adresse.">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="3; url=../schluesselanhaenger/">
+  <link rel="canonical" href="../schluesselanhaenger/">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="theme-color" content="#f4f4f4">
+  <title>Schlüsselanhänger – neue Adresse</title>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Theme vor dem ersten Rendern setzen, sonst blitzt der Hellmodus auf -->
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme')
+      || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  </script>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="app-container">
+      <div class="header">
+        <img src="../assets/schluesselanhaenger.webp" alt="Logo" class="logo">
+        <h1 class="title">Schlüsselanhänger</h1>
+        <p class="subtitle">Neue Adresse</p>
+      </div>
+
+      <div class="form-card">
+        <p class="form-instruction">Kennzeichenschilder heißt jetzt Schlüsselanhänger</p>
+        <hr class="divider">
+        <div class="tiles">
+          <a class="tile" id="ziel" href="../schluesselanhaenger/">
+            <img class="tile-logo" src="../assets/schluesselanhaenger.webp" alt="">
+            <span class="tile-title">Zur neuen App</span>
+            <span class="tile-hint">Weiterleitung in <span id="sekunden">3</span> Sekunden. Bitte Lesezeichen bzw. Homescreen-Verknüpfung neu anlegen.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Query und Hash mitnehmen, damit eventuelle Parameter erhalten bleiben
+    const ziel = new URL('../schluesselanhaenger/', location.href);
+    ziel.search = location.search;
+    ziel.hash = location.hash;
+    document.getElementById('ziel').href = ziel.href;
+
+    let rest = 3;
+    const anzeige = document.getElementById('sekunden');
+    const timer = setInterval(() => {
+      rest -= 1;
+      anzeige.textContent = Math.max(rest, 0);
+      if (rest <= 0) {
+        clearInterval(timer);
+        location.replace(ziel.href);
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>
