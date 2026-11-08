@@ -1,17 +1,18 @@
 # Testumgebung
 
-**Ziel/Isolation:** Startseite und die drei Apps laufen unter einer Adresse wie auf GitHub Pages (gleicher Ursprung, also gemeinsame Theme-Einstellung). Kein Docker, kein Prod-Zugriff, nichts davon ist produktiv.
+**Ziel/Isolation:** Startseite und die vier Apps laufen unter einer Adresse wie auf GitHub Pages (gleicher Ursprung, also gemeinsame Theme-Einstellung). Kein Docker, kein Prod-Zugriff, nichts davon ist produktiv.
 
 | Pfad | Quelle |
 |---|---|
 | `/` | dieses Repo (`index.html`, `style.css`, …) |
 | `/kennzeichenschilder/` | `~/dev/kennzeichenschilder-app` (wird bei Bedarf geklont) |
 | `/acriss-check/` | `~/dev/acriss-check` |
+| `/acriss-liste/` | `~/dev/acriss-liste` |
 | `/fuehrerschein-check/` | `~/dev/fuehrerschein-check` |
 
 ## Anlegen/Aktualisieren
 ```bash
-just test      # = ./testenv.sh, baut die drei Apps (vite build), setzt die Seite zusammen, startet den Server
+just test      # = ./testenv.sh, baut die vier Apps (vite build), setzt die Seite zusammen, startet den Server
 ```
 Erneut ausführen übernimmt Änderungen (Apps werden neu gebaut, der Server läuft weiter).
 

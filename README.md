@@ -1,11 +1,12 @@
 # Tools – Startseite
 
-Statische Einstiegsseite für die drei Web-Apps, gehostet als GitHub-Pages-User-Site unter `https://michaeljoeyk.github.io/`. Optik wie die Apps selbst.
+Statische Einstiegsseite für die vier Web-Apps, gehostet als GitHub-Pages-User-Site unter `https://michaeljoeyk.github.io/`. Optik wie die Apps selbst.
 
 | App | Pfad | Repo |
 |---|---|---|
 | Kennzeichenschilder | `/kennzeichenschilder/` | `ba/kennzeichenschilder-app` |
 | ACRISS-Check | `/acriss-check/` | `ba/acriss-check` |
+| ACRISS-Liste | `/acriss-liste/` | `ba/acriss-liste` (noch nicht auf Forgejo) |
 | Führerschein-Check | `/fuehrerschein-check/` | `ba/fuehrerschein-check` |
 
 Die Apps laufen als eigene GitHub-Projektseiten (Repo-Name = Pfad) und werden dort per `npm run deploy` veröffentlicht. Weil alle auf derselben Domain liegen, teilen sie sich den Dark-/Hellmodus (`localStorage`-Key `theme`).

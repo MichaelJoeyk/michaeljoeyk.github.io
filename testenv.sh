@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Testumgebung: Startseite + drei Apps unter einer Adresse, wie auf GitHub Pages.
+# Testumgebung: Startseite + vier Apps unter einer Adresse, wie auf GitHub Pages.
 # Aufruf: ./testenv.sh [up|down|status]   (Standard: up)
 set -euo pipefail
 
@@ -11,7 +11,7 @@ PIDFILE="$SITE.pid"
 export PATH="$HOME/.local/opt/node/bin:$HOME/.local/opt/node-v26.13.0-linux-x64/bin:$PATH"
 
 # Ordner im Repo-Verzeichnis -> Pfad auf der Testseite
-APPS=("kennzeichenschilder-app:kennzeichenschilder" "acriss-check:acriss-check" "fuehrerschein-check:fuehrerschein-check")
+APPS=("kennzeichenschilder-app:kennzeichenschilder" "acriss-check:acriss-check" "acriss-liste:acriss-liste" "fuehrerschein-check:fuehrerschein-check")
 
 running() { [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; }
 
