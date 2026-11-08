@@ -28,18 +28,27 @@ python3 -m http.server 8090
 
 ## Deploy
 
-Kein Build. GitHub-Repo `michaeljoeyk.github.io` als Remote `github` eintragen und `main` pushen:
+Alles auf einmal (Apps + Startseite):
 
 ```bash
-git remote add github git@github.com:michaeljoeyk/michaeljoeyk.github.io.git
-git push github main
+./deploy.sh            # deployt alles, was live nicht aktuell ist
+./deploy.sh --dry-run  # nur anzeigen, was passieren würde
+./deploy.sh --force    # alle Apps neu deployen, auch wenn aktuell
 ```
 
-Pages-Quelle im GitHub-Repo: Branch `main`, Ordner `/`.
+Ablauf je App (Liste in `apps.sh`, gemeinsam mit `testenv.sh`):
+
+1. Repo muss committet und nach Forgejo (`origin`) gepusht sein, sonst wird es übersprungen.
+2. Steckt der aktuelle Commit-Hash schon im Live-JS (`__GIT_HASH__` aus `vite.config.js`), passiert nichts.
+3. Sonst `npm run deploy` (vite build + gh-pages auf Remote `github`).
+
+Die Startseite (kein Build) wird per `git push github main` veröffentlicht, wenn GitHub einen anderen Stand hat. Am Ende wartet das Skript, bis GitHub Pages den neuen Stand ausliefert; Exit-Code ≠ 0, wenn etwas übersprungen wurde oder fehlschlug.
+
+Einmalig für die Startseite: GitHub-Repo `michaeljoeyk.github.io` als Remote `github`, Pages-Quelle Branch `main`, Ordner `/`.
 
 ## Neue App ergänzen
 
-Kachel in `index.html` kopieren, Logo nach `assets/` legen, Pfad = Name des GitHub-Repos der App.
+Kachel in `index.html` kopieren, Logo nach `assets/` legen, Pfad = Name des GitHub-Repos der App. Eintrag in `apps.sh` ergänzen (gilt dann für Testumgebung und Deploy).
 
 ## Weiterleitungen
 
