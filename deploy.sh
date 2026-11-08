@@ -35,7 +35,7 @@ sauber() {
   git -C "$dir" fetch -q origin || { echo "   ✗ Forgejo nicht erreichbar, übersprungen"; return 1; }
   local vor; vor=$(git -C "$dir" rev-list --count '@{u}..HEAD' 2>/dev/null) || { echo "   ✗ kein Upstream-Branch, übersprungen"; return 1; }
   if [ "$vor" -gt 0 ]; then
-    echo "   ✗ $vor Commit(s) nicht nach Forgejo gepusht, übersprungen"; return 1
+    echo "   ✗ $vor Commit(s) nicht nach Forgejo gepusht, übersprungen ($(git -C "$dir" log --format=%h '@{u}..HEAD' | tr '\n' ' ')→ git -C $dir push)"; return 1
   fi
 }
 
