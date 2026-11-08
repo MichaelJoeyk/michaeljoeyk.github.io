@@ -5,7 +5,7 @@ set -euo pipefail
 
 PORT="${PORT:-8090}"
 DEV="$(cd "$(dirname "$0")/.." && pwd)"
-START="$DEV/sixt-apps-startseite"
+START="$DEV/startseite"
 SITE="${XDG_STATE_HOME:-$HOME/.local/state}/sixt-testenv"
 PIDFILE="$SITE.pid"
 export PATH="$HOME/.local/opt/node/bin:$HOME/.local/opt/node-v26.13.0-linux-x64/bin:$PATH"

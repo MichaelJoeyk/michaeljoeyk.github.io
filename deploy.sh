@@ -7,7 +7,7 @@
 set -uo pipefail
 
 DEV="$(cd "$(dirname "$0")/.." && pwd)"
-START="$DEV/sixt-apps-startseite"
+START="$DEV/startseite"
 SITE_URL="https://michaeljoeyk.github.io"
 GH_OWNER="MichaelJoeyk"
 export PATH="$HOME/.local/opt/node/bin:$HOME/.local/opt/node-v26.13.0-linux-x64/bin:$PATH"
